@@ -1,4 +1,4 @@
-import {FormEvent, MouseEventHandler, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Item} from "./typed.ts";
 import {getBarcodeData} from "./api.ts";
 
