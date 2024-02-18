@@ -1,40 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.scss'
-import {createHashRouter, RouterProvider} from "react-router-dom";
+import { HashRouter, Route, Routes} from "react-router-dom";
 import App from "./App.tsx";
 import {Checkout} from "./Checkout.tsx";
 import {Cart} from "./Cart.tsx";
 import AddItems from "./AddItems.tsx";
 import {Layout} from "./Layout.tsx";
 
-const router = createHashRouter([
-    {
-        path: "/",
-        element: <App />,
-    },
-    {
-        path: "/checkout",
-        element: <Checkout/>,
-    },
-    {
-        path: "/cart/:barcode",
-        element: <Cart/>,
-    },
-    {
-        path: "/addItems",
-        element: <AddItems/>,
-    },
-    {
-        path: "*",
-        element: <App />,
-    }
-]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.Suspense>
       <Layout>
-          <RouterProvider router={router} />
+          <HashRouter>
+              <Routes>
+                    <Route path="/" element={<App/>}/>
+                    <Route path="/checkout" element={<Checkout/>}/>
+                    <Route path="/cart/:barcode" element={<Cart/>}/>
+                    <Route path="/addItems" element={<AddItems/>}/>
+                </Routes>
+          </HashRouter>
       </Layout>
   </React.Suspense>,
 )
