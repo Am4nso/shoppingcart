@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.scss'
-import {createHashRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import App from "./App.tsx";
 import {Checkout} from "./Checkout.tsx";
 import {Cart} from "./Cart.tsx";
 import AddItems from "./AddItems.tsx";
 import {Layout} from "./Layout.tsx";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
